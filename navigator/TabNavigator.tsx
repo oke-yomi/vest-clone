@@ -8,7 +8,7 @@ import {
 	SavingsScreen,
 } from "../screens";
 import { useNavigation } from "@react-navigation/native";
-import { Icon } from '@rneui/themed';
+import { Icon } from "@rneui/themed";
 
 export type TabStackParamList = {
 	Home: undefined;
@@ -30,7 +30,10 @@ const TabNavigator = () => {
 	});
 
 	return (
-		<TabStack.Navigator>
+		<TabStack.Navigator screenOptions={({ route }) => ({
+			tabBarActiveTintColor: '',
+			tabBarInactiveTintColor: '',
+		})}>
 			<TabStack.Screen name="Home" component={HomeScreen} />
 			<TabStack.Screen name="Savings" component={SavingsScreen} />
 			<TabStack.Screen name="Invest" component={InvestScreen} />
